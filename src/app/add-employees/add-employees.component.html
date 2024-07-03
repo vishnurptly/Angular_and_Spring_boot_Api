@@ -1,0 +1,60 @@
+
+
+<div class="container">
+    <div class=" fbody row  ">
+        <div class="head">
+            <h1> Create Employees</h1>
+        </div>
+         <div class="main">
+           
+               
+            <form [formGroup]="userForm"  >
+                
+                <div class="form-group">
+                    
+                    <label class="form-label">Name</label>
+                    <input formControlName="Name" type="text" class="form-control"
+                     >
+                     <div class="text-danger" *ngIf="userForm.controls['Name'].invalid && (userForm.controls['Name']).touched || userForm.controls['Name'].dirty">
+                        <span *ngIf="userForm.controls['Name'].errors?.['required']">Name is required</span>
+                        <span *ngIf="userForm.controls['Name'].errors?.['minlength']">Min 12 charatores</span>
+                    </div>
+                   
+                     
+                </div>
+                <div class="form-group">
+                    <label class="form-label">EmployeeId</label>
+                    <input formControlName="employeeId" type="text" class="form-control"  >
+                    <div class="text-danger" *ngIf="userForm.controls['employeeId'].invalid && (userForm.controls['employeeId']).touched || userForm.controls['employeeId'].dirty">
+                        <span *ngIf="userForm.controls['employeeId'].errors?.['required']">employeeId is required</span>
+                        <span *ngIf="userForm.controls['employeeId'].errors?.['pattern']">Pleace enter uppercase&Lowercase </span>
+                    </div>
+                   
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Handler</label>
+                    <input formControlName="handlar" type="text" class="form-control"  >
+                    <div class="text-danger" *ngIf="userForm.controls['handlar'].invalid && (userForm.controls['handlar']).touched || userForm.controls['handlar'].dirty">
+                        <span *ngIf="userForm.controls['handlar'].errors?.['required']">Handler is required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Company</label>
+                    <input formControlName="company" type="text" class="form-control"  >
+                    <div class="text-danger" *ngIf="userForm.controls['company'].invalid && (userForm.controls['company']).touched || userForm.controls['company'].dirty">
+                        <span *ngIf="userForm.controls['company'].errors?.['required']">Company is required</span>
+                    </div>
+                </div>
+                <div class="btn-d  form-select-sm">
+                    <button class="  btn btn-primary" (click)="onSave()" type="submit">UPDATE</button>
+
+                </div>
+            </form>
+      
+         </div>
+    </div>
+
+</div>
+
+
+

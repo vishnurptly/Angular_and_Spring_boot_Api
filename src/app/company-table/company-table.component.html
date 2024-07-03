@@ -1,0 +1,29 @@
+
+
+    <h2>Company</h2> <Button class="btn text-bg-dark" ><a class="nav-link px-2 text-white" routerLink="/CreateCompany" routerLinkActive="active" ariaCurrentWhenActive="page">Create Company</a></Button>
+<table class="table table-striped w-75 h-75 shadow" >
+    
+    <thead>
+      <tr >
+        <th scope="col">ID</th>
+        <th scope="col">Company Name</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Addrass</th>
+        <th scope="col">unik Code</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody  *ngFor="let item of companyl">
+      <tr>
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.companyName}}</td>
+        <td>{{item.mobileNumber}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.UnikCode}}</td>
+        <td><Button class="btn btn-success" (click)="update(item.id)" >Edit</Button></td>
+        <td><Button class="btn btn-danger" (click)="deleteItem(item.id)">Delete</Button></td>
+      </tr>
+     
+    </tbody>
+  </table>

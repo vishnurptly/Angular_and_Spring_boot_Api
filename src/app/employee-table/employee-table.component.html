@@ -1,0 +1,31 @@
+
+
+<h2>Employee</h2>  <Button class="btn text-bg-dark" ><a class="nav-link px-2 text-white" routerLink="/CreateEmployee" routerLinkActive="active" ariaCurrentWhenActive="page">Create Employees</a></Button>
+<table class="table table-striped w-75 h-75 shadow" >
+    
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">EmployeeId</th>
+        <th scope="col">Handler</th>
+        <th scope="col">Company</th>
+        <th>  </th>
+        <th>  </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of employeeList">
+      <tr>
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.Name}}</td>
+        <td>{{item.employeeId}}</td>
+        <td>{{item.handlar}}</td>
+        <td>{{item.company}}</td>
+       <td> <Button class="btn btn-success" ><a class="nav-link px-2 text-white" routerLink="/EditEmployee" routerLinkActive="active" ariaCurrentWhenActive="page">Edit</a></Button></td>
+        <td><Button class="btn btn-danger" (click)="empDelete(item.id)">Delete</Button></td>
+      
+      </tr>
+     
+    </tbody>
+  </table>
+
