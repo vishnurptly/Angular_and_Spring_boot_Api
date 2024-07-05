@@ -46,17 +46,23 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Unik Code</label>
-                        <input    formControlName="UnikCode"  type="text" class="form-control" >
+                        <input    formControlName="unikCode"  type="text" class="form-control" >
                         
-                        <div class="text-danger" *ngIf="userForm.controls['UnikCode'].invalid && (userForm.controls['UnikCode']).touched || userForm.controls['UnikCode'].dirty">
-                            <span *ngIf="userForm.controls['UnikCode'].errors?.['required']">UnikCode is required</span>
-                            <span *ngIf="userForm.controls['UnikCode'].errors?.['pattern']">UnikCode Follow special characters</span>
+                        <div class="text-danger" *ngIf="userForm.controls['unikCode'].invalid && (userForm.controls['unikCode']).touched || userForm.controls['unikCode'].dirty">
+                            <span *ngIf="userForm.controls['unikCode'].errors?.['required']">unikCode is required</span>
+                            <span *ngIf="userForm.controls['unikCode'].errors?.['pattern']">unikCode Follow special characters</span>
                          
                         </div>
                         
                     </div>
                     <div class="btn-d  form-select-sm">
-                        <button class="  btn btn-primary" (click)="onSave()" type="submit">UPDATE</button>
+                        
+                            @if(isUrlid==true){
+                                <button class="  btn btn-primary" (click)="onUpdate()" type="submit"> UPDATE </button>
+                            }@else {
+                                <button class="  btn btn-primary" (click)="onSave()" type="submit"> Add </button>
+                            }
+                       
     
                     </div>
                 </form>

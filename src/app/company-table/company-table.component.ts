@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Route, RouterLink, RouterLinkActive, RouterOutlet, Routes } from '@angular/router';
 import { CompanyApiService } from '../company-api.service';
 import { CommonModule } from '@angular/common';
 import { CompanyModels } from '../company-models';
@@ -22,7 +22,7 @@ export class CompanyTableComponent implements OnInit {
   constructor(private dataService:CompanyApiService){}
   companyList(){
    
-    this.dataService.getCom().subscribe((res:any)=>{
+    this.dataService.getCom().subscribe(res=>{
       this.companyl=res;
       // console.log(res);
     })
@@ -40,13 +40,5 @@ export class CompanyTableComponent implements OnInit {
   }
 
   
-  update(id:String){
-    
-   this.dataService.FetchedGet(id).subscribe((res:any)=>{
-    this.companyl=res;
-    console.log(res);
-  });
-   
-    }
 
 }

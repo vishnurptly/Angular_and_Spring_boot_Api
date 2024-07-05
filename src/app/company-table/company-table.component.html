@@ -20,8 +20,8 @@
         <td>{{item.companyName}}</td>
         <td>{{item.mobileNumber}}</td>
         <td>{{item.address}}</td>
-        <td>{{item.UnikCode}}</td>
-        <td><Button class="btn btn-success" (click)="update(item.id)" >Edit</Button></td>
+        <td>{{item.unikCode}}</td>
+        <td><Button class="btn btn-success" [routerLink]="'formCompany/'+item.id" >Edit</Button></td>
         <td><Button class="btn btn-danger" (click)="deleteItem(item.id)">Delete</Button></td>
       </tr>
      

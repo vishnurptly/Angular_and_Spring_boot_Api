@@ -15,6 +15,7 @@ export class CompanyApiService {
 
   private baseUrl = 'http://localhost:8080/api/post';
   private baseUrl1 = 'http://localhost:3000/employee';
+  comUrl="http://localhost:8080/api"
 
   
   constructor( private http:HttpClient) { }
@@ -41,7 +42,7 @@ postCom(data: any): Observable<any> {
 }
 
 getCom():Observable<any>{
-   return this.http.get<any>('http://localhost:8080/api/all');
+   return this.http.get<any>(this.comUrl+'/all');
  
 }
 
@@ -49,12 +50,12 @@ deleteCom(id:String):Observable<any>{
 return this.http.delete<any>(this.baseUrl +'/'+id);
 }
 
-FetchedGet(id:String){
-  return this.http.get<any>(this.baseUrl+'/'+id);
+getbyid(id:String){
+  return this.http.get<any>(this.comUrl+'/id/'+id);
 }
 
 updatecom(id:String,item:any){
-  return this.http.put<any>(this.baseUrl+'/'+id,item);
+  return this.http.put<any>(this.comUrl+'/update/'+id,item);
 }
 
 }
